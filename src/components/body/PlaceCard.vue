@@ -97,11 +97,12 @@ export default {
     margin-top: 4px
 
   .star-mark-box
+    opacity: .72
     display: flex
     width: 101px
     height: 32px
     position: relative
-    background-color: darkgrey
+    background-color: #ffffff
     backdrop-filter: blur(4px)
     top: -92px
     left: 265px
@@ -137,7 +138,7 @@ export default {
       background-position: 50% 50%
       background-repeat: no-repeat
       border: inherit
-      background-color: darkgrey
+      background-color: #ffffff
       width: 16px
       height: 16px
       margin-right: 4px
@@ -147,7 +148,7 @@ export default {
       background-position: 50% 50%
       background-repeat: no-repeat
       border: inherit
-      background-color: darkgrey
+      background-color: #ffffff
       width: 16px
       height: 16px
       margin-right: 4px
