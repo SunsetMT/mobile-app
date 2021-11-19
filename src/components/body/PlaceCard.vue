@@ -66,7 +66,7 @@ export default {
     position: relative
     background-color: darkgrey
     backdrop-filter: blur(4px)
-    top: -91px
+    top: -92px
     left: 265px
     justify-content: space-evenly
     align-items: center
