@@ -6,6 +6,12 @@ Vue.use(Vuex)
 let store = new Vuex.Store({
     state: {
         que: '',
+        buttons: [
+            {id: 1, svg: "Btn_1.svg", altSvg: "Btn_1-active.svg", isActive: true, link: "#"},
+            {id: 2, svg: "Btn_2.svg", altSvg: "Btn_2-active.svg", isActive: false, link: "#"},
+            {id: 3, svg: "Btn_3.svg", altSvg: "Btn_3-active.svg", isActive: false, link: "#"},
+            {id: 4, svg: "Btn_4.svg", altSvg: "Btn_4-active.svg", isActive: false, link: "#"},
+        ],
         products: [
             {
                 id: 1,
@@ -34,6 +40,9 @@ let store = new Vuex.Store({
         ]
     },
     mutations: {
+        CLEAR_QUE: (state) => {
+          state.que = ''
+        },
         INSERT_QUE: (state, str) => {
             state.que = str
         },
@@ -42,9 +51,16 @@ let store = new Vuex.Store({
         },
         DEC_MARK: (state, id) => {
             state.products.find(product => product.id === id).mark--;
+        },
+        SWITCH_BUTTONS: (state, id) => {
+            state.buttons.forEach(button => button.isActive = false)
+            state.buttons.find(button => button.id === id).isActive = true;
         }
     },
     actions: {
+        MAKE_CLEAR_QUE({commit}){
+            commit('CLEAR_QUE')
+        },
         INSERT_IN_QUE({commit}, str){
             commit('INSERT_QUE', str)
         },
@@ -53,15 +69,21 @@ let store = new Vuex.Store({
         },
         MAKE_DEC_MARK({commit}, id){
             commit('DEC_MARK', id)
+        },
+        MAKE_SWITCH_BUTTONS({commit}, id){
+            commit('SWITCH_BUTTONS', id)
         }
 
     },
     getters: {
         PRODUCTS(state){
-            return state.products;
+            return state.products
         },
         QUE(state){
-            return state.que;
+            return state.que
+        },
+        BUTTONS(state){
+            return state.buttons
         }
     }
 });

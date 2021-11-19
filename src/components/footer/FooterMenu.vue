@@ -1,7 +1,7 @@
 <template>
   <div class="footer-menu-wrapper">
     <FooterMenuElement
-        v-for="product in products"
+        v-for="product in BUTTONS"
         :key="product.id"
         :menu_product="product"
     />
@@ -11,20 +11,17 @@
 <script>
 import FooterMenuElement from "@/components/footer/FooterMenuElement";
 
+import {mapGetters} from 'vuex'
+
 export default {
   name: "FooterMenu",
   components: {
     FooterMenuElement
   },
-  data: function () {
-    return {
-      products: [
-        {id: 1, svg: "Btn_1.svg", link: "#"},
-        {id: 2, svg: "Btn_2.svg", link: "#"},
-        {id: 3, svg: "Btn_3.svg", link: "#"},
-        {id: 4, svg: "Btn_4.svg", link: "#"},
-      ]
-    }
+  computed: {
+    ...mapGetters([
+      'BUTTONS'
+    ]),
   }
 }
 </script>

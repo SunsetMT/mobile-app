@@ -21,10 +21,14 @@ export default {
   width: 366px
   padding-bottom: 65px
   .map-jpg
+    margin-right: 12px
+    margin-left: 12px
     width: 366px
     height: 216px
 
   .description
+    margin-right: 12px
+    margin-left: 12px
     margin-top: 16px
     font-family: "Gilroy Regular"
     font-size: 17px
