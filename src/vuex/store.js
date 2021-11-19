@@ -36,12 +36,25 @@ let store = new Vuex.Store({
     mutations: {
         INSERT_QUE: (state, str) => {
             state.que = str
+        },
+        INC_MARK: (state, id) => {
+            state.products.find(product => product.id === id).mark++;
+        },
+        DEC_MARK: (state, id) => {
+            state.products.find(product => product.id === id).mark--;
         }
     },
     actions: {
         INSERT_IN_QUE({commit}, str){
             commit('INSERT_QUE', str)
+        },
+        MAKE_INC_MARK({commit}, id){
+            commit('INC_MARK', id)
+        },
+        MAKE_DEC_MARK({commit}, id){
+            commit('DEC_MARK', id)
         }
+
     },
     getters: {
         PRODUCTS(state){
