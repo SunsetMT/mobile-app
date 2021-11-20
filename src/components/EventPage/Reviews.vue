@@ -49,6 +49,7 @@ name: "Reviews"
     line-height: 22px
     font-weight: 600
 
+
 @font-face
   font-family: "Gilroy Semibold"
   src: url("../../assets/fonts/gilroy-semibold.ttf")
