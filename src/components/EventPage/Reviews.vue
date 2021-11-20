@@ -44,6 +44,10 @@ name: "Reviews"
     height: 48px
     background-color: #434244
     color: #ffffff
+    font-family: "Gilroy Semibold", serif
+    font-size: 17px
+    line-height: 22px
+    font-weight: 600
 
 @font-face
   font-family: "Gilroy Semibold"

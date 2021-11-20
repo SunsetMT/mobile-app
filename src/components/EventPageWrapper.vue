@@ -2,20 +2,20 @@
   <div class="event-page-wrapper">
     <EventHeader :card_data="card_data"/>
     <EventBody/>
-<!--    <F/>-->
+    <F/>
   </div>
 </template>
 
 <script>
 import EventHeader from "@/components/EventPage/EventHeader";
 import EventBody from "@/components/EventPage/EventBody";
-/*import F from "@/components/footer/F"*/
+import F from "@/components/footer/F"
 export default {
   name: "EventPageWrapper",
   components: {
     EventHeader,
     EventBody,
-    // F
+    F
   },
   props: {
     card_data: {
