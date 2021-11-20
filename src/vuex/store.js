@@ -6,6 +6,29 @@ Vue.use(Vuex)
 let store = new Vuex.Store({
     state: {
         que: '',
+        review: [
+            {
+                id: 1,
+                name: 'Татьяна Маркова',
+                text: 'Замечательная экскурсия. Посетили множество мест. Погода была как на заказ.',
+                stars: 5,
+                jpg: 'post_1_user.jpg'
+            },
+            {
+                id: 2,
+                name: 'Алексей Ставицкий',
+                text: 'Экскурсия очень понравилась, за 3 часа увидели много красивых мест, гид Анастасия ооочень интересно рассказывала',
+                stars: 4,
+                jpg: 'post_2_user.jpg'
+            },
+            {
+                id: 3,
+                name: 'Вадим Мельников',
+                text: 'Очень понравилась экскурсия. Гид - приятная женщина, вела экскурсию интересно, "без воды". Только интересные факты. Эта экскурсия подойдет для первого знакомства с Москвой, гид дает рекомендации, какие места интересно посетить с более подробными экскурсиями. 3 часа пролетели незаметно!',
+                stars: 4,
+                jpg: 'post_3_user.jpg'
+            },
+        ],
         buttons: [
             {id: 1, svg: "Btn_1.svg", altSvg: "Btn_1-active.svg", isActive: true, link: "#"},
             {id: 2, svg: "Btn_2.svg", altSvg: "Btn_2-active.svg", isActive: false, link: "#"},
@@ -41,7 +64,7 @@ let store = new Vuex.Store({
     },
     mutations: {
         CLEAR_QUE: (state) => {
-          state.que = ''
+            state.que = ''
         },
         INSERT_QUE: (state, str) => {
             state.que = str
@@ -58,32 +81,35 @@ let store = new Vuex.Store({
         }
     },
     actions: {
-        MAKE_CLEAR_QUE({commit}){
+        MAKE_CLEAR_QUE({commit}) {
             commit('CLEAR_QUE')
         },
-        INSERT_IN_QUE({commit}, str){
+        INSERT_IN_QUE({commit}, str) {
             commit('INSERT_QUE', str)
         },
-        MAKE_INC_MARK({commit}, id){
+        MAKE_INC_MARK({commit}, id) {
             commit('INC_MARK', id)
         },
-        MAKE_DEC_MARK({commit}, id){
+        MAKE_DEC_MARK({commit}, id) {
             commit('DEC_MARK', id)
         },
-        MAKE_SWITCH_BUTTONS({commit}, id){
+        MAKE_SWITCH_BUTTONS({commit}, id) {
             commit('SWITCH_BUTTONS', id)
         }
 
     },
     getters: {
-        PRODUCTS(state){
+        PRODUCTS(state) {
             return state.products
         },
-        QUE(state){
+        QUE(state) {
             return state.que
         },
-        BUTTONS(state){
+        BUTTONS(state) {
             return state.buttons
+        },
+        REVIEWS(state) {
+            return state.review
         }
     }
 });

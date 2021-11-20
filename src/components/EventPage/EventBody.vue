@@ -6,13 +6,31 @@
       площади, – «Чрева Петербурга», - которая долгое время была одним из наиболее криминальных и неблагоприятных мест
       нашего города.
     </div>
+    <MoreButton/>
+    <div class="extra-text">
+    </div>
 
+    <Reviews/>
+    <PostsList/>
   </div>
 </template>
 
 <script>
+import MoreButton from "@/components/EventPage/MoreButton";
+import Reviews from "@/components/EventPage/Reviews";
+import PostsList from "@/components/EventPage/PostsList";
 export default {
-  name: "EventBody"
+  name: "EventBody",
+  date: function (){
+    return{
+      isMore: false
+    }
+  },
+  components: {
+    MoreButton,
+    Reviews,
+    PostsList
+  }
 }
 </script>
 
